@@ -4,10 +4,28 @@ def valid_input(grid, number, position):
     """Given a grid, a number and its position check if it is valid"""
 
     # check the row
+    for i in range(len(grid[position[0]])):
+        if grid[position[0]][i] == number and i != position[1]:
+            return False
 
     # check the column
+    for j in range(len(grid)):
+        if grid[j][position[1]] == number and j != position[0]:
+            return False
 
     # check the 3x3 box
+    x_box = position[1] // 3
+    y_box = position[0] // 3
+
+    for j in range(3*y_box, (3*y_box)+3): 
+        for i in range(3*x_box, (3*x_box)+3):
+            if grid[j][i] == number and (j, i) != position:
+                return False
+
+    return True    
+        
+
+
 
 def get_grid(filename):
     """Convert the grid from the txt file in a list of lists"""
@@ -43,6 +61,7 @@ def empty_square(grid):
             if grid[i][j] == 0:
 
                 # i is the row and j is the column
+                # (x,y) = (row, column)
                 return (i,j)
 
     return None
@@ -60,6 +79,4 @@ def print_board(grid):
             print(grid[i][j], end = ' ')
     print('\n')
 
-
-            
 
