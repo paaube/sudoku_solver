@@ -1,4 +1,4 @@
-filename = "test_sudoku_1.txt"
+filename = "test_sudoku_2.txt"
 
 
 def solver(grid):
@@ -101,6 +101,7 @@ def print_board(grid):
 def main(filename):
 
     grid = get_grid(filename)
+    print_board(grid)
     solver(grid)
     print_board(grid)
 
