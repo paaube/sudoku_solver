@@ -3,12 +3,15 @@ import sys
 filename = sys.argv[1]
 
 def solver(grid):
+    """Solves a sudoku grid"""
 
     empty = empty_square(grid)
 
+    # return True if there are no empty squares
     if empty == None:
         return True
 
+    # try all numbers and call the function recursively when valid
     for i in range(1,10):
         if valid_input(grid, i, empty):
             grid[empty[0]][empty[1]] = i
@@ -17,6 +20,7 @@ def solver(grid):
                 return True
             grid[empty[0]][empty[1]] = 0
         
+    # return False if there are no valid solutions
     return False
 
 
@@ -100,10 +104,16 @@ def print_board(grid):
     print('\n')
 
 def main(filename):
-
+    # get the grid from the file
     grid = get_grid(filename)
+
+    # print the original board
     print_board(grid)
+
+    # solve the board
     solver(grid)
+
+    # print the final board
     print_board(grid)
 
 main(filename)
