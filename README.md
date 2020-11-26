@@ -20,7 +20,7 @@ The txt contains a 9 by 9 sudoku grid where empty squares are 0. The image below
 <br>
 <br>
 
-![ScreenShot](./images/txt_format.jpg)
+![ScreenShot](/images/txt_format.JPG)
 
 ## Concepts:
 <ul>
