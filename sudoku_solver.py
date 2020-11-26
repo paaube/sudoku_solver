@@ -1,5 +1,37 @@
 filename = "test_sudoku_1.txt"
 
+# DONE:
+# get the grid from txt
+# find an empty square
+# check if a solution is valid
+# show grid
+
+#TODO:
+# Use the empty square to find an empty square
+# Try every number until one is valid (check with valid input function)
+# Find the next empty square
+# Try every number...
+# if at one point every number returns False for valid_input, go back
+# Try next number in previous square
+
+def solver(grid):
+
+    empty = empty_square(grid)
+
+    if empty == None:
+        return True
+
+    for i in range(1,10):
+        if valid_input(grid, i, empty):
+            grid[empty[0]][empty[1]] = i
+
+            if solver(grid):
+                return True
+            grid[empty[0]][empty[1]] = 0
+        
+    return False
+
+
 def valid_input(grid, number, position):
     """Given a grid, a number and its position check if it is valid"""
 
@@ -24,8 +56,6 @@ def valid_input(grid, number, position):
 
     return True    
         
-
-
 
 def get_grid(filename):
     """Convert the grid from the txt file in a list of lists"""
@@ -52,6 +82,7 @@ def get_grid(filename):
 
     return grid
 
+
 def empty_square(grid):
     """Given a grid, this function returns a tuple of an empty square"""
 
@@ -66,6 +97,7 @@ def empty_square(grid):
 
     return None
 
+
 def print_board(grid):
     """Given a grid in list format, print the sudoku board"""
 
@@ -79,4 +111,10 @@ def print_board(grid):
             print(grid[i][j], end = ' ')
     print('\n')
 
+def main(filename):
 
+    grid = get_grid(filename)
+    solver(grid)
+    print_board(grid)
+
+main(filename)
