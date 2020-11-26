@@ -19,7 +19,8 @@ The repository includes 2 sudoku grids to test the program:
 The txt contains a 9 by 9 sudoku grid where empty squares are 0. The image below shows the formatting of the txt file.
 <br>
 <br>
-<img src="images/txt_format.jpg" width = 300 />
+
+![ScreenShot](images/txt_format.jpg)
 
 ## Concepts:
 <ul>
