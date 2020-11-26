@@ -1,18 +1,5 @@
 filename = "test_sudoku_1.txt"
 
-# DONE:
-# get the grid from txt
-# find an empty square
-# check if a solution is valid
-# show grid
-
-#TODO:
-# Use the empty square to find an empty square
-# Try every number until one is valid (check with valid input function)
-# Find the next empty square
-# Try every number...
-# if at one point every number returns False for valid_input, go back
-# Try next number in previous square
 
 def solver(grid):
 
