@@ -1,5 +1,6 @@
-filename = "test_sudoku_2.txt"
+import sys
 
+filename = sys.argv[1]
 
 def solver(grid):
 
