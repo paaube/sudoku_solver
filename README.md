@@ -1,6 +1,8 @@
 # Sudoku Solver
 
-The goal of this project is to quickly solve any sudoku grid provided in a txt file. To do so, the program uses a backtracking algorithm with a recursive function.
+The soduku solver is a text based program that, given a sudoku grid inside a txt file, prints the initial grid and the completed grid.
+
+To do so, the program uses a backtracking algorithm with a recursive function.
 
 ## How to use:
 
@@ -16,7 +18,7 @@ The repository includes 2 sudoku grids to test the program:
 </ul>
 
 <br>
-The txt contains a 9 by 9 sudoku grid where empty squares are 0. The image below shows the formatting of the txt file.
+The txt file contains a 9 by 9 sudoku grid where empty squares are 0. The image below shows the formatting of the txt file.
 <br>
 <br>
 
